@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Salas — Sistema de Reservas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="header-inner">
+      <p class="kicker">Campus &middot; Reservas</p>
+      <h1>Painel de salas</h1>
+      <p class="subtitle">Consulte a disponibilidade em tempo real, como num painel de embarque.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Filtros">
+      <div class="control-group">
+        <label for="filtro-capacidade">Capacidade mínima</label>
+        <select id="filtro-capacidade">
+          <option value="0">Qualquer capacidade</option>
+          <option value="4">4+ pessoas</option>
+          <option value="8">8+ pessoas</option>
+          <option value="15">15+ pessoas</option>
+          <option value="30">30+ pessoas</option>
+        </select>
+      </div>
+      <p class="result-count" id="contador-resultados"></p>
+    </section>
+
+    <section class="board" aria-label="Lista de salas">
+      <div class="board-head">
+        <span class="col col-sala">Sala</span>
+        <span class="col col-cap">Capacidade</span>
+        <span class="col col-horario">Próximo horário livre</span>
+        <span class="col col-status">Status</span>
+      </div>
+      <div id="lista-salas" class="board-body">
+        <!-- linhas geradas via JavaScript -->
+      </div>
+    </section>
+
+    <p id="empty-state" class="empty-state" hidden>
+      Nenhuma sala encontrada com essa capacidade. Tente reduzir o filtro.
+    </p>
+  </main>
+
+  <footer class="page-footer">
+    <p>Etapa 1 de 5 &middot; Catálogo de Salas (US01, US02)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
